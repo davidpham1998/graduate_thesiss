@@ -1,5 +1,5 @@
 #include <Wire.h>
-#define PCF 0x38 // address PCF8574A
+#define PCF_ADDr 0x38 // address PCF_ADDr8574A
 #define LED 8
 byte value, sta, pre ;
 
@@ -28,14 +28,14 @@ void loop() {
 }
 
 void reading() {
-  Wire.beginTransmission(PCF);
+  Wire.beginTransmission(PCF_ADDr_ADDr);
   Wire.write(0XFF);
   Wire.endTransmission();
-  Wire.requestFrom(PCF, 1);    // request 1 bytes from MCP23017 device
-  Wire.beginTransmission(PCF);
+  Wire.requestFrom(PCF_ADDr, 1);    // request 1 bytes from MCP23017 device
+  Wire.beginTransmission(PCF_ADDr);
   Wire.write(0xFF);
   Wire.endTransmission();
-  Wire.requestFrom(PCF, 1);
+  Wire.requestFrom(PCF_ADDr, 1);
 
   while (Wire.available())
   {
